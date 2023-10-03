@@ -12,11 +12,26 @@ public class UniqueWords
 	  int count = 0;
 	  
       for (int i = 0; i < list.size(); i++)
-      {		 for (int j = 0; j < list.size(); j++)
-		 {
-			
-		 }
-      }
+      {
+          String currentWord = list.get(i);
+          boolean isUnique = true;
+
+          // Compare the current element with elements that follow
+          for (int j = i + 1; j < list.size(); j++)
+          {
+             if (currentWord.equals(list.get(j)))
+             {
+                isUnique = false;
+                break; 
+             }
+          }
+
+          // If the element is unique, increment the count
+          if (isUnique)
+          {
+             count++;
+          }
+       }
 	  return count;
    }
 
